@@ -14,54 +14,34 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Produk</th>
                             <th>Jumlah Produk</th>
                             <th>Harga</th>
-                            <th>Total</th>
-                            <th>Aksi</th>
+                            <th>Aksi</th> 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Kaos</td>
-                            <td>
-                                <input name="jumlah_produk" type="number" class="form-control" value="1" min="1">
-                            </td>
-                            <td>150K</td>
-                            <td>150K</td>
-                            <td>
-                                <button class="btn btn-danger">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jaket</td>
-                            <td>
-                                <input type="number" class="form-control" value="2" min="1">
-                            </td>
-                            <td>250K</td>
-                            <td>500K</td>
-                            <td>
-                                <button class="btn btn-danger">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kolor</td>
-                            <td>
-                                <input type="number" class="form-control" value="3" min="1">
-                            </td>
-                            <td>100K</td>
-                            <td>300K</td>
-                            <td>
-                                <button class="btn btn-danger">Hapus</button>
-                            </td>
-                        </tr>
+                        @foreach ($keranjangs as $index => $keranjang)
+                            @csrf
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $keranjang->nama_produk }}</td>
+                                <td>{{ $keranjang->jumlah_order }}</td>
+                                <td>{{ $keranjang->harga }}</td>
+                                <td>
+                                    <a onClick="return confirm('apakah anda yakin ingin menghapus data tersebut?')"
+                                        href="/destroyKeranjang/{{ $keranjang->id }}" class="btn btn-danger text-">Hapus</a>
+                                </td>
+                            </tr>
                     </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-end">
-                <h4>Total: 950K</h4>
+                <h4> {{ $total }}K</h4>
             </div>
         </div>
         <div class="row">

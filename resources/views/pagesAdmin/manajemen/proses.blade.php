@@ -20,11 +20,13 @@
                                                 <th>No</th>
                                                 <th>Nama Pembeli</th>
                                                 <th>Produk Dibeli</th>
-                                                <th>Jumlah</th>
+                                                <th>Jumlah Order</th>
                                                 <th>Tanggal Order</th>
+                                                <th>Metode Pengiriman</th>
+                                                <th>Metode Pembayaran</th>
                                                 <th>Status</th>
                                                 <th>Aksi</th>
-                                            </tr>
+                                            </tr> 
                                         </thead>
                                         <tbody>
                                             @foreach ($orders as $index => $order)
@@ -34,6 +36,8 @@
                                                     <td>{{ $order->produk->nama_produk }}</td>
                                                     <td>{{ $order->jumlah_order }}</td>
                                                     <td>{{ $order->tanggal_order }}</td>
+                                                    <td>{{ $order->metode_pengiriman }}</td>
+                                                    <td>{{ $order->metode_pembayaran }}</td>
                                                     <td>
                                                         <form action="/update/{{ $order->id }}" method="POST">
                                                             @csrf

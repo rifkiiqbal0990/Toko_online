@@ -20,12 +20,13 @@ class Produk extends Model
 
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class);
+        return $this->belongsTo(Kategori::class, 'kategori_id');
     }
 
     public function order()
     {
         return $this->hasMany(Order::class);
     }
+
 
 }

@@ -10,32 +10,20 @@
     </div>
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-12">
-                <h4>Informasi Pengguna</h4>
-                <div class="mb-3">
-                    <strong>Nama:</strong> Hardtwo
+            @foreach ($users as $user)
+                <div class="col-md-12">
+                    <h4>Informasi Pengguna</h4>
+                    <div class="mb-3">
+                        <strong>Nama:</strong> {{ $user->nama }}
+                    </div>
+                    <div class="mb-3">
+                        <strong>Alamat:</strong> {{ $user->alamat }}
+                    </div>
+                    <div class="mb-3">
+                        <strong>Nomor Telepon:</strong> {{ $user->no_telp }}
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <strong>Alamat:</strong> Jl. Awkwok No. 123, hiohoho
-                </div>
-                <div class="mb-3">
-                    <strong>Nomor Telepon:</strong> 0812-3456-7890
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h4>Estimasi Pengiriman</h4>
-                <p>
-                    Metode Pengiriman: <strong>Pengiriman Ekspres</strong>
-                </p>
-                <p>
-                    Estimasi Waktu Pengiriman: <strong>1-3 Hari Kerja</strong>
-                </p>
-                <p>
-                    Status Pengiriman: <strong>Dalam Proses</strong>
-                </p>
-            </div>
+            @endforeach
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -46,32 +34,18 @@
                             <th>Produk</th>
                             <th>Jumlah</th>
                             <th>Harga</th>
-                            <th>Total</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Kaos</td>
-                            <td>1</td>
-                            <td>150K</td>
-                            <td>150K</td>
-                            <td>Dikemas</td>
-                        </tr>
-                        <tr>
-                            <td>Jaket</td>
-                            <td>2</td>
-                            <td>250K</td>
-                            <td>500K</td>
-                            <td>Dikemas</td>
-                        </tr>
-                        <tr>
-                            <td>Kolor</td>
-                            <td>3</td>
-                            <td>100K</td>
-                            <td>300K</td>
-                            <td>Dikemas</td>
-                        </tr>
+                        @foreach ($orders as $order)
+                            <tr>
+                                <td>{{ $order->produk->nama_produk }}</td>
+                                <td>{{ $order->jumlah_order }}</td>
+                                <td>{{ $order->produk->harga }}</td>
+                                <td>{{ $order->status }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

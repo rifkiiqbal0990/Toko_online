@@ -5,7 +5,7 @@
              <div>
                  <i class="fa fa-envelope mx-2"></i>
                  <a class="navbar-sm-brand text-light text-decoration-none"
-                     href="mailto:info@company.com">info@company.com</a>
+                     href="mailto:info@company.com">tolen@gmail.com</a>
                  <i class="fa fa-phone mx-2"></i>
                  <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
              </div>
@@ -27,7 +27,7 @@
      <div class="container d-flex justify-content-between align-items-center">
 
          <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
-             Zay
+             xShop
          </a>
 
          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
@@ -49,9 +49,6 @@
                      <li class="nav-item">
                          <a class="nav-link" href="/shop">Shop</a>
                      </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="/contact">Contact</a>
-                     </li>
                  </ul>
              </div>
              <div class="navbar align-self-center d-flex">
@@ -70,12 +67,12 @@
                  <a class="nav-icon position-relative text-decoration-none" href="/keranjang">
                      <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                      <span
-                         class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                         class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                  </a>
                  <a class="nav-icon position-relative text-decoration-none" href="/profile">
                      <i class="fa fa-fw fa-user text-dark mr-3"></i>
                      <span
-                         class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
+                         class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                  </a>
              </div>
          </div>

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Produk;
+use App\Models\Laporan;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -22,7 +23,12 @@ class Kategori extends Model
 
     public function produk()
     {
-        return $this->hasMany(Produk::class);
+        return $this->hasMany(Produk::class, 'kategori_id');
+    }
+
+    public function laporan()
+    {
+        return $this->hasMany(Laporan::class);
     }
 
 }

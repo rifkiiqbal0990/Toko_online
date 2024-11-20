@@ -6,6 +6,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\TrackingController;
 
@@ -100,19 +101,13 @@ Route::post('/update/{id}', [OrderController::class, 'update']);
 Route::get('/tracking/{id}', [TrackingController::class, 'tracking']);
 
 
-// HISTORY PENJUALAN
-Route::get('/historyPenjualan', function () {
-    return view('pagesAdmin.manajemen.historyPenjualan');
-});
-
-
 
     // FORM
 
 // LAPORAN PENJUALAN
-Route::get('/laporan', function () {
-    return view('pagesAdmin.forms.laporan');
-});
+Route::get('/showLaporan', [LaporanController::class, 'showLaporan']);
+Route::get('/laporan', [LaporanController::class, 'tambahLaporan']);
+Route::post('/storeLaporan', [LaporanController::class, 'storeLaporan']);
 
 
      });
@@ -125,39 +120,40 @@ Route::get('/laporan', function () {
 
 
              // PAGES USER //
+ // home
+Route::get('/', [ShopController::class, 'home']);
+
 // shop
 Route::get('/shop', [ShopController::class, 'shop']);
+
+// shop/kategori
+Route::get('/kategori/{kategori}', [ProdukController::class, 'shopKategori'])->name('kategori.shopKategori');
+
 
 // shop detail
 Route::get('/shopDetail/{id}', [ShopController::class, 'shopDetail']);
 
-// home
-Route::get('/', function () {
-    return view('pagesUsers.belanja.index');
-});
+// store to keranjang
+Route::post('/storeKeranjang', [ShopController::class, 'storeKeranjang']);
+
+// keranjang
+Route::get('/keranjang', [ShopController::class, 'keranjang']);
+Route::get('/destroyKeranjang/{id}', [ShopController::class, 'destroyKeranjang']);
+
+// checkout
+Route::get('/checkout', [ShopController::class, 'checkout']);
+Route::post('/storeCheckout', [ShopController::class, 'storeCheckout']);
+
+// dikemas
+Route::get('/dikemas', [ShopController::class, 'dikemas']);
+
+// profile
+Route::get('/profile', [UserController::class, 'profile']);
 
 
 // about
 Route::get('/about', function () {
     return view('pagesUsers.about.about');
-});
-
-
-// contact
-Route::get('/contact', function () {
-    return view('pagesUsers.about.contact');
-});
-
-
-// keranjang
-Route::get('/keranjang', function () {
-    return view('pagesUsers.belanja.keranjang');
-});
-
-
-// checkout
-Route::get('/checkout', function () {
-    return view('pagesUsers.belanja.checkout');
 });
 
 
@@ -167,23 +163,9 @@ Route::get('/history', function () {
 });
 
 
-// dikemas
-Route::get('/dikemas', function () {
-    return view('pagesUsers.belanja.dikemas');
-});
-
-
-// profile
-Route::get('/profile', function () {
-    return view('pagesUsers.belanja.profile');
-});
-
-
 // tracking penjualan / users
 Route::get('/trackingUsers', function () {
     return view('pagesUsers.belanja.trackingUsers');
 });
 
     });
-
-

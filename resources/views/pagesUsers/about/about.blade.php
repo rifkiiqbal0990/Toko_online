@@ -27,9 +27,9 @@
                 <div class="col-md-8 text-white">
                     <h1>About Us</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Selamat datang di xShop, tempat belanja online yang mengutamakan kualitas, kepercayaan, dan
+                        kenyamanan Anda! Kami hadir untuk memenuhi kebutuhan Anda dengan produk berkualitas tinggi yang
+                        dirancang untuk mempermudah hidup Anda.
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -44,10 +44,15 @@
     <section class="container py-5">
         <div class="row text-center pt-5 pb-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Our Services</h1>
+                <h1 class="h1">Kenapa Memilih Kami?</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    Lorem ipsum dolor sit amet.
+                    Kualitas Terjamin: Kami hanya menawarkan produk terbaik yang telah melewati proses seleksi ketat.
+                    Harga Kompetitif: Belanja hemat tanpa mengorbankan kualitas.
+                    |
+                    Pengalaman Belanja Mudah: Dengan antarmuka ramah pengguna, belanja di toko kami menjadi cepat dan
+                    praktis.
+                    |
+                    Layanan Pelanggan 24/7: Tim kami siap membantu kapan saja Anda butuhkan.
                 </p>
             </div>
         </div>
@@ -91,10 +96,9 @@
         <div class="container my-4">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Our Brands</h1>
+                    <h1 class="h1">Brand Kami</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        Lorem ipsum dolor sit amet.
+                        POKOKNYA BRAND KAMI SEMUANYA BERKUALITAS
                     </p>
                 </div>
                 <div class="col-lg-9 m-auto tempaltemo-carousel">

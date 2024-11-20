@@ -1,4 +1,4 @@
-<title>Zay Shop - About Page</title>
+<title>Toko Online</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="{{ asset('assetsfrontend/css/custom.css') }}">
 
 <!-- Load fonts style after rendering the layout styles -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
 <link rel="stylesheet" href="{{ asset('assetsfrontend/css/fontawesome.min.css') }}">
 
 {{-- bootstrap icon --}}

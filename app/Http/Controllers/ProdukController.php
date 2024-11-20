@@ -62,7 +62,7 @@ class ProdukController extends Controller
             Produk::create($storeDataProduk);
             return redirect('/stok');
     }
- 
+
 
     // UPDATE PRODUK
     public function edit($id)
@@ -126,6 +126,20 @@ class ProdukController extends Controller
        return redirect('/stok');
     }
 
+    // SHOW PRODUK SESUAI KATEGORI
+    public function shopKategori($kategori)
+    {
+        // Jika kategori adalah "All", ambil semua produk
+        if ($kategori === 'all') {
+            $produks = Produk::all();
+        } else {
+            // Jika kategori spesifik, filter produk berdasarkan kategori
+            $produks = Produk::where('kategori_id', $kategori)->get();
+        }
+
+        // Return view dengan data produk
+        return view('pagesUsers.belanja.shopKategori', compact('produks', 'kategori'));
+    }
 
 
 }

@@ -57,44 +57,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    @foreach ($produks as $index => $produk)
-                        <div class="col-md-4">
-                            <div class="card mb-4 product-wap rounded-0">
-                                <div class="card rounded-0">
-                                    <img class="card-img rounded-0 img-fluid" src="{{ asset('foto/' . $produk->foto) }}"
-                                        alt="">
-                                    <div
-                                        class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                        <ul class="list-unstyled">
-                                            <li><a class="btn btn-success text-white mt-2"
-                                                    href="/shopDetail/{{ $produk->id }}"><i class="far fa-eye"></i></a>
+                @if ($produks->count() > 0)
+                    <div class="row">
+                        @foreach ($produks as $item)
+                            <div class="col-md-4">
+                                <div class="card mb-4 product-wap rounded-0">
+                                    <div class="card rounded-0">
+                                        <img class="card-img rounded-0 img-fluid" src="{{ asset('foto/' . $item->foto) }}"
+                                            alt="{{ $item->nama_produk }}">
+                                        <div
+                                            class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                            <ul class="list-unstyled">
+                                                <li><a class="btn btn-success text-white mt-2"
+                                                        href="/shopDetail/{{ $item->id }}"><i
+                                                            class="far fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="/shopDetail" class="h3 text-decoration-none">{{ $item->nama_produk }}</a>
+                                        <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                            <li class="pt-2">
+                                                <span
+                                                    class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                <span
+                                                    class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                <span
+                                                    class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                <span
+                                                    class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                <span
+                                                    class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
                                             </li>
                                         </ul>
+                                        <p class="text-center mb-0">{{ $item->harga }}</p>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <a href="/shopDetail" class="h3 text-decoration-none">{{ $produk->nama_produk }}</a>
-                                    <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                        <li class="pt-2">
-                                            <span
-                                                class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                            <span
-                                                class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                            <span
-                                                class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                            <span
-                                                class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                            <span
-                                                class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                                        </li>
-                                    </ul>
-                                    <p class="text-center mb-0">{{ $produk->harga }}</p>
-                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
+                @else
+                    <p>Tidak ada produk dalam kategori ini.</p>
+                @endif
             </div>
         </div>
     </div>

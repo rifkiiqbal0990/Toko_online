@@ -22,14 +22,13 @@
                         class="icon icon-app-store"></i><span class="nav-text">Manajemen</span></a>
                 <ul aria-expanded="false">
                     <li><a href="/order">Proses Penjualan</a></li>
-                    <li><a href="/tracking">Tracking Order</a></li>
-                    <li><a href="/historyPenjualan">History Penjualan</a></li>
                 </ul>
             <li class="nav-label">Forms</li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-form"></i><span
                         class="nav-text">Forms</span></a>
                 <ul aria-expanded="false">
                     <li><a href="/laporan">Laporan Penjualan</a></li>
+                    <li><a href="/showLaporan">Show Penjualan</a></li>
                 </ul>
             </li>
             <li class="nav-label">Extra</li>
