@@ -39,10 +39,7 @@
                                     <h1 class="h1 text-success"><b>xC</b> eCommerce</h1>
                                     <h3 class="h2">{{ $produk->nama_produk }}</h3>
                                     <p>
-                                        Jaket parasut adalah pilihan sempurna bagi Anda yang menginginkan kombinasi antara
-                                        gaya, kenyamanan, dan fungsi. Dibuat dari bahan parasut berkualitas tinggi, jaket
-                                        ini dirancang untuk memberikan perlindungan maksimal sekaligus tampilan modis dalam
-                                        berbagai situasi.
+                                        {{ $produk->deskripsi }}
                                     </p>
                                 </div>
                             </div>
@@ -127,10 +124,7 @@
                                 <a href="/shopDetail/{{ $produk->id }}"
                                     class="h2 text-decoration-none text-dark">{{ $produk->nama_produk }}</a>
                                 <p class="card-text">
-                                    Jaket parasut adalah pilihan sempurna bagi Anda yang menginginkan kombinasi antara
-                                    gaya, kenyamanan, dan fungsi. Dibuat dari bahan parasut berkualitas tinggi, jaket
-                                    ini dirancang untuk memberikan perlindungan maksimal sekaligus tampilan modis dalam
-                                    berbagai situasi.
+                                    {{ $produk->deskripsi }}
                                 </p>
                                 <p class="text-muted">Reviews (24)</p>
                             </div>

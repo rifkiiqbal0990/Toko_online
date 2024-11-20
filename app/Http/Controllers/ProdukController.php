@@ -32,6 +32,7 @@ class ProdukController extends Controller
             'nama_produk'          => 'required|max:255',
             'harga'                => 'required',
             'stok'                 => 'required',
+            'deskripsi'            => 'required',
             'foto'                 => 'required|image'
 
           ], [
@@ -40,7 +41,8 @@ class ProdukController extends Controller
             'nama_produk.required'           => 'Nama Produk harus diisi',
             'nama_produk.max'                => 'Nama Produk maksimal 255 karakter',
             'harga.required'                 => 'Harga harus diisi',
-            'stok.required'                  => 'Stok harus diisi'
+            'stok.required'                  => 'Stok harus diisi',
+            'deskripsi'                      => 'Deskripsi harus diisi'
 
           ]);
 
@@ -56,6 +58,7 @@ class ProdukController extends Controller
             'harga'                => $request -> harga,
             'stok'                 => $request -> stok,
             'kategori_id'          => $request -> kategori_id,
+            'deskripsi'            => $request -> deskripsi,
             'foto'                 => $fileName
            ];
 
@@ -80,6 +83,7 @@ class ProdukController extends Controller
             'kategori_id'          => 'required',
             'nama_produk'          => 'required|max:255',
             'harga'                => 'required',
+            'deskripsi'            => 'required',
             'stok'                 => 'required'
 
           ], [
@@ -88,6 +92,7 @@ class ProdukController extends Controller
             'nama_produk.required'           => 'Nama Produk harus diisi',
             'nama_produk.max'                => 'Nama Produk maksimal 255 karakter',
             'harga.required'                 => 'Harga harus diisi',
+            'deskripsi'                      => 'Deskripsi harus diisi',
             'stok.required'                  => 'Stok harus diisi'
 
           ]);
@@ -103,6 +108,7 @@ class ProdukController extends Controller
             'nama_produk'          => $request -> nama_produk,
             'harga'                => $request -> harga,
             'stok'                 => $request -> stok,
+            'deskripsi'            => $request -> deskripsi,
             'kategori_id'          => $request -> kategori_id
            ];
 
@@ -129,15 +135,13 @@ class ProdukController extends Controller
     // SHOW PRODUK SESUAI KATEGORI
     public function shopKategori($kategori)
     {
-        // Jika kategori adalah "All", ambil semua produk
+
         if ($kategori === 'all') {
             $produks = Produk::all();
         } else {
-            // Jika kategori spesifik, filter produk berdasarkan kategori
             $produks = Produk::where('kategori_id', $kategori)->get();
         }
 
-        // Return view dengan data produk
         return view('pagesUsers.belanja.shopKategori', compact('produks', 'kategori'));
     }
 

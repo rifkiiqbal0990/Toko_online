@@ -18,14 +18,9 @@
                             <p class="h3 py-2">{{ $dataProduk->harga }}</p>
                             <h6>Specification:</h6>
                             <ul class="list-unstyled pb-3">
-                                <li> Kualitas Premium : Dibuat dengan bahan terbaik yang tahan lama dan nyaman digunakan.
-                                </li>
-                                <li> Fitur Inovatif : tahan air, desain ergonomis, atau teknologi terbaru.</li>
-                                <li>Desain Elegan : Tampil modis di segala suasana, cocok untuk aktivitas sehari-hari maupun
-                                    acara
-                                    spesial.</li>
+                                {{ $dataProduk->deskripsi }}
                             </ul>
- 
+
                             <form action="/storeKeranjang" method="POST">
                                 @csrf
                                 <input type="hidden" name="nama_produk" value="{{ $dataProduk->nama_produk }}">

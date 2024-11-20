@@ -48,6 +48,13 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="form-group col-md-6">
+                                    <label>Deskripsi</label>
+                                    <textarea name="deskripsi" class="form-control" placeholder="Masukan deskripsi produk">{{ $dataProduk->deskripsi }}</textarea>
+                                    @error('deskripsi')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-8">
                                         <label for="">Foto</label>
